@@ -1,0 +1,148 @@
+<!doctype html> 
+   <html lang="pl"> 
+      <head> 
+		<style>
+			input[type=button]{
+				width: 50px;
+				font-size: 18px;
+			}
+			input[type=text]{
+				width: 200px;
+				text-align: right;
+				font-size: 20px;
+			}
+			table{
+				padding: 5px;
+				border: 1px solid;
+			}
+			td {
+				text-align: center;
+			}
+ 
+		</style>
+         <meta charset=utf-8>
+         <title>Kalkulator w JavaScript</title>
+      </head>
+      <body>
+ 
+ 
+        <form name="kalk">
+			<table align="center">
+				<tr>
+					<td >
+						<input name="txtEkran" type="text" value=0 readonly />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value="C" onclick="CorCE('C')" />
+						<input type="button" value="CE" onclick="CorCE('CE')" />
+						<input type="button" value="%" onclick="procPlusMinus('%')" />
+						<input type="button" value="+/-" onclick="procPlusMinus('+/-')" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value=7 onclick="cyfraClick(7)" />
+						<input type="button" value=8 onclick="cyfraClick(8)" />
+						<input type="button" value=9 onclick="cyfraClick(9)" />
+						<input type="button" value="/" onclick="operatClick('/')" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value=4 onclick="cyfraClick(4)" />
+						<input type="button" value=5 onclick="cyfraClick(5)" />
+						<input type="button" value=6 onclick="cyfraClick(6)" />
+						<input type="button" value="*" onclick="operatClick('*')" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value=1 onclick="cyfraClick(1)" />
+						<input type="button" value=2 onclick="cyfraClick(2)" />
+						<input type="button" value=3 onclick="cyfraClick(3)" />
+						<input type="button" value="-" onclick="operatClick('-')" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value=0 onclick="cyfraClick(0)" />
+						<input type="button" value="," onclick="przecinek()" />
+						<input type="button" value="=" onclick="rownaClick()" />
+						<input type="button" value="+" onclick="operatClick('+')" />
+					</td>
+				</tr>
+			</table>
+		</form>
+ 
+		<script type="text/javascript">
+			var formKalk = window.document.kalk;
+			var operat;
+			var cyfraPierwsza = true;
+			var walor1 = 0, walor2 = 0;
+ 
+			function cyfraClick(cyfra){
+				if (cyfraPierwsza || formKalk.txtEkran.value == 0){
+					formKalk.txtEkran.value  = cyfra;
+					cyfraPierwsza = false;
+				}else{
+					formKalk.txtEkran.value += cyfra;
+				}
+			}
+ 
+			function operatClick(opr){
+				var txtEkran = formKalk.txtEkran.value;
+				walor1 = parseFloat(txtEkran);
+				operat = opr;
+				cyfraPierwsza = true;
+			}
+ 
+			function rownaClick(){
+				var rezultat;
+				var txtEkran = formKalk.txtEkran.value;
+				walor2 = parseFloat(txtEkran);
+				if(operat == "/") {
+				rezultat = walor1 / walor2;
+				}else if(operat == "*") {
+					rezultat = walor1 * walor2;
+				}else if(operat == "-"){
+					rezultat = walor1 - walor2;
+				}else{
+					rezultat = walor1 + walor2;
+				}
+				formKalk.txtEkran.value = rezultat;
+				walor1 = rezultat;
+				cyfraPierwsza = true;
+			}
+ 
+			function przecinek(){
+				var txtEkran = formKalk.txtEkran.value;
+				if (txtEkran.indexOf(".") == -1) {
+					txtEkran += ".";
+					formKalk.txtEkran.value = txtEkran;
+					cyfraPierwsza = false;
+				}
+			}
+ 
+			function CorCE(c){
+				formKalk.txtEkran.value = 0;
+				cyfraPierwsza = true;
+ 
+				if (c == "C"){
+					walor1 = 0;
+					operat = "";
+				}
+			}
+ 
+			function procPlusMinus(ppm){
+				if(ppm == "+/-"){
+					formKalk.txtEkran.value = parseFloat(formKalk.txtEkran.value) * -1;
+				}else{
+					formKalk.txtEkran.value = (parseFloat(formKalk.txtEkran.value) / 100) * parseFloat(walor1);
+				}
+			}
+		</script>
+ 
+      </body>
+   </html>

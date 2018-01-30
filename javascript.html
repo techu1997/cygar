@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>My First JavaScript</h1>
+    
+    <button type="button"
+            onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time.</button>
+    
+    <p id="demo"></p>
+    
+    <h2>What Can JavaScript Do?</h2>
+    
+    <p id="content">JavaScript can change HTML content.</p>
+    
+    <button type="button" onclick='document.getElementById("content").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    
+    <h3>What Can JavaScript Do?</h3>
+
+<p>JavaScript can change HTML attributes.</p>
+
+<p>In this case JavaScript changes the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light</button>
+    
+    <h4>What Can JavaScript Do?</h4>
+    <p id="element">JavaScript can change the style of an HTML element.</p>
+    
+    <button type="button" onclick="document.getElementById('element').style.fontSize='35px'">Click Me!</button>
+    
+    <h5>What can JavaScript Do?</h5>
+    
+    <p id="hide">JavaScript can hide HTML elements.</p>
+    
+    <button type="button" onclick="document.getElementById('hide').style.display='none'">Click Me!</button>
+    
+    <h6>What Can JavaScript Do?</h6>
+    <p>JavaScript can show hidden HTML elements.</p>
+    
+    <p id="hidden" style="display: none">Hello JavaScript!</p>
+    
+    <button type="button" onclick="document.getElementById('hidden').style.display='block'">Click Me!</button>
+    
+    <h6>JavaScript in Head</h6>
+    
+    <p id="head">A Paragraph.</p>
+    
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <script>
+    function myFunction() {
+        document.getElementById("head").innerHTML = "Paragraph changed.";
+    }
+    </script>
+    
+    </body>
+</html>

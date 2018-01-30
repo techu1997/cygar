@@ -1,0 +1,131 @@
+<!doctype html> 
+   <html lang="pl"> 
+      <head> 
+		<style>
+			input[type=button]{
+				width: 60px;
+				font-size: 20px;
+                color: white;
+			}
+			input[type=text]{
+				width: 200px;
+				text-align: right;
+				font-size: 20px;
+                color:blueviolet;
+			}
+			table{
+				padding: 5px;
+				border: 1px solid;
+                color: green;
+			}
+			td {
+				text-align: center;
+                color: green;
+			}
+            #cyferki {
+                font-size: 20px;
+                padding: 6px;
+                color: black;
+            }
+ 
+		</style>
+         <meta charset=utf-8>
+         <title>Kalkulator w JavaScript</title>
+      </head>
+      <body>
+ 
+ 
+        <form name="kalk">
+			<table align="center">
+				<tr>
+					<td >
+						  <input class="numerki" id="cyferki"name="txtEkran" type="text" value="0" readonly />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input style="border-color: blue; background: black;" type="button" value=7 onclick="cyfraClick(7)" />
+						<input style="border-color: greenyellow; background: #3a3a3a;" type="button" value=8 onclick="cyfraClick(8)" />
+						<input style="border-color: red; background: green;" type="button" value=9 onclick="cyfraClick(9)" />
+						<input style="border-color: yellow; background: blue;" type="button" value="/" onclick="operatClick('/')" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input style="border-color: aqua; background: red;" type="button" value=4 onclick="cyfraClick(4)" />
+						<input style="border-color: blue; background: black;" type="button" value=5 onclick="cyfraClick(5)" />
+						<input style="border-color: greenyellow; background: #3a3a3a;" type="button" value=6 onclick="cyfraClick(6)" />
+						<input style="border-color: red; background: green;" type="button" value="*" onclick="operatClick('*')" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input style="border-color: black; background: purple;" type="button" value=1 onclick="cyfraClick(1)" />
+						<input style="border-color: aqua; background: red;" type="button" value=2 onclick="cyfraClick(2)" />
+						<input style="border-color: blue; background: black;" type="button" value=3 onclick="cyfraClick(3)" />
+						<input style="border-color: greenyellow; background: #3a3a3a;" type="button" value="-" onclick="operatClick('-')" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input style="border-color: coral; background: aqua;" type="button" value=0 onclick="cyfraClick(0)" />
+						<input style="border-color: black; background: purple;" type="button" value="," onclick="przecinek()" />
+						<input style="border-color: aqua; background: red;" type="button" value="=" onclick="rownaClick()" />
+						<input style="border-color: blue; background: black;" type="button" value="+" onclick="operatClick('+')" />
+					</td>
+				</tr>
+                <td>
+						<input style="border-color: brown; background: sandybrown;" type="button" value="C" onclick="CorCE('C')" />
+						<input style="border-color: coral; background: aqua;" type="button" value="CE" onclick="CorCE('CE')" />
+						<input style="border-color: black; background: purple;" type="button" value="%" onclick="procPlusMinus('%')" />
+						<input style="border-color: aqua; background: red;" type="button" value="+/-" onclick="procPlusMinus('+/-')" />
+				     </td>
+                
+			</table>
+		</form>
+
+		<audio id="zero">
+			<source src="0..mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+        <audio id="one">
+            <source src="1..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="two">
+            <source src="2..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="three">
+            <source src="3..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="four">
+            <source src="4..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="five">
+            <source src="5..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="six">
+            <source src="6..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="seven">
+            <source src="7..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="eight">
+            <source src="8..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio id="nine">
+            <source src="9..mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+ 
+		<script type="text/javascript" src="dzwieki.js?xxx"></script>
+ 
+      </body>
+   </html>
